@@ -10274,7 +10274,7 @@ function feedback(kind) {
     var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
     audioCtx = audioCtx || new AC();
     var o = audioCtx.createOscillator(), g = audioCtx.createGain();
-    o.frequency.value = kind === 'ok' ? 880 : (kind === 'warn' ? 440 : 220); g.gain.value = 0.08;
+    o.frequency.value = kind === 'ok' ? 2500 : (kind === 'warn' ? 440 : 220); g.gain.value = 1;
     o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime + (kind === 'ok' ? 0.12 : 0.3));
   } catch (e) {}
 }
